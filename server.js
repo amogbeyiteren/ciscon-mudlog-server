@@ -36,7 +36,8 @@ async function insertRandomValues() {
     await prisma.parameter.createMany({
       data: {
         ...randomValues,
-        timestamp: new Date(),
+        timestamp: new Date(new Date().toLocaleString('en-GB', { timeZone: 'Europe/London' })).getTime() + 3600000,
+      
       },
     });
     console.log("Random values inserted successfully");
