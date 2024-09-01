@@ -47,7 +47,7 @@ async function insertRandomValues() {
 
 // Ping endpoint to keep the server active
 app.get("/ping", (req, res) => {
-  res.status(200).send("pong");
+  res.status(200).send("The anointed one");
   console.log("Ping request received and responded with pong");
 });
 
