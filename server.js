@@ -30,13 +30,20 @@ async function insertRandomValues() {
     acc[param] = Math.random() * 100; // Generate random values between 0 and 100
     return acc;
   }, {});
+// Create a Date object
+const currentDate = new Date();
 
+// Calculate the offset for GMT+1
+const gmtPlusOneOffset = 60; // GMT+1 is 60 minutes ahead of UTC
+
+// Adjust the time to GMT+1
+currentDate.setMinutes(currentDate.getMinutes() + gmtPlusOneOffset);
   // Insert random values into the Parameter table
   try {
     await prisma.parameter.createMany({
       data: {
         ...randomValues,
-        timestamp: new Date(new Date().toLocaleString('en-GB', { timeZone: 'Europe/London' })).getTime() + 3600000,
+        timestamp: currentDate,
       
       },
     });
