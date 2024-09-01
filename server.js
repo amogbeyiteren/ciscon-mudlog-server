@@ -45,6 +45,12 @@ async function insertRandomValues() {
   }
 }
 
+// Ping endpoint to keep the server active
+app.get("/ping", (req, res) => {
+  res.status(200).send("pong");
+  console.log("Ping request received and responded with pong");
+});
+
 // Schedule insertion of random values every 10 seconds
 setInterval(insertRandomValues, 5000);
 
