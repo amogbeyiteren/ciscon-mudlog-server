@@ -33,7 +33,7 @@ async function insertRandomValues() {
 
   // Insert random values into the Parameter table
   try {
-    await prisma.parameter.create({
+    await prisma.parameter.createMany({
       data: {
         ...randomValues,
         timestamp: new Date(),
