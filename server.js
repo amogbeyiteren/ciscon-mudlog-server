@@ -59,8 +59,8 @@ app.get("/ping", (req, res) => {
   console.log("Ping request received and responded with pong");
 });
 
-// Schedule insertion of random values every 10 seconds
-setInterval(insertRandomValues, 15000);
+// Schedule insertion of random values every 15 seconds
+setInterval(insertRandomValues, 20000);
 
 // Start the server
 app.listen(PORT, () => {
