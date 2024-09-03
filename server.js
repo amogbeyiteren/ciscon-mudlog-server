@@ -60,7 +60,7 @@ app.get("/ping", (req, res) => {
 });
 
 // Schedule insertion of random values every 15 seconds
-setInterval(insertRandomValues, 20000);
+setInterval(insertRandomValues, 5000);
 
 // Start the server
 app.listen(PORT, () => {
